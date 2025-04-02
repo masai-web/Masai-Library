@@ -1,4 +1,4 @@
- MASAI LIBRARY
+ MASAI PUBLIC  LIBRARY
 
 Author:
 Masai Derrick
