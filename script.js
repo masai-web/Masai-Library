@@ -1,17 +1,11 @@
-// Event listener to handle page load
 document.addEventListener("DOMContentLoaded", () => {
-  // Optionally, display a default search or a welcome message.
 });
-
-// Event listener for the search button click
 document.getElementById("searchBtn").addEventListener("click", () => {
   let query = document.getElementById("searchInput").value.trim();
   if (query !== "") {
     searchBooks(query);
   }
 });
-
-// Optional: Allow search on Enter key press
 document.getElementById("searchInput").addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     let query = event.target.value.trim();
@@ -20,13 +14,11 @@ document.getElementById("searchInput").addEventListener("keydown", (event) => {
     }
   }
 });
-
-// Function to fetch books from the Open Library API
 function searchBooks(query) {
-  // Clear previous results
+  
   document.getElementById("booksContainer").innerHTML = "Loading...";
 
-  // Open Library Search API endpoint
+
   const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`;
 
   fetch(url)
@@ -40,7 +32,6 @@ function searchBooks(query) {
     });
 }
 
-// Function to display books on the page
 function displayBooks(books) {
   const container = document.getElementById("booksContainer");
   container.innerHTML = "";
@@ -50,15 +41,15 @@ function displayBooks(books) {
     return;
   }
 
-  // Display only the first 10 books for simplicity
+  
   books.slice(0, 10).forEach(book => {
     const bookCard = document.createElement("div");
     bookCard.classList.add("book-card");
 
-    // Use cover_i property to display a cover image if available
+   
     let coverImage = book.cover_i 
       ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` 
-      : "https://dummyimage.com/200x300/cccccc/000000.png&text=No+Cover"; // Updated placeholder
+      : "https://dummyimage.com/200x300/cccccc/000000.png&text=No+Cover"; 
 
     bookCard.innerHTML = `
       <img src="${coverImage}" alt="Cover image of ${book.title}">
