@@ -18,5 +18,5 @@ How to Run:
  Live Demo:
 [Masai library live ](https://github.com/masai-web/Masai-Library)
 
-HOSTED :(masai-library-delta.vercel.app)
+HOSTED LIVE :(masai-library-delta.vercel.app)
 
